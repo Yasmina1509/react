@@ -1,125 +1,52 @@
-import React from 'react';
-import './App.css';
-import './shortly.css';
-import logo from './imgs/logo (2).png';
+import React from "react";
+import "./App.css";
+import Header from './Components/Header/Header';
+import Card from "./Components/Card/Card";
+import mars_rug from './Components/images/mars_rug.png'
+import keyboard_sticker from './Components/images/keyboard_sticker.png'
+import smart_watch from './Components/images/smart_watch.png'
+import wireless_keyboard from './Components/images/wireless_keyboard.png'
+import mouse from './Components/images/mouse.png'
+import airpods from './Components/images/airpods.png'
+import powerbank from './Components/images/powerbank.png'
+import usb_flash_drive from './Components/images/usb_flash_drive.png'
+import smartphone from './Components/images/smartphone.png'
+import playstation_5 from './Components/images/playstation_5.png'
+import yandex_station from './Components/images/yandex_station.png'
+import planshet_samsung from './Components/images/planshet_samsung.png'
+
+const products = [
+  { name: 'Mars rug', price: 100, coins: 'Coins', available: 24, image: mars_rug },
+  { name: 'Keyboard sticker', price: 49, coins: 'Coins', available: 11, image: keyboard_sticker },
+  { name: 'Smart watch', price: 899, coins: 'Coins', available: 4, image: smart_watch },
+  { name: 'Wireless keyboard', price: 350, coins: 'Coins', available: 9, image: wireless_keyboard },
+  { name: 'Mouse', price: 359, coins: 'Coins', available: 24, image: mouse },
+  { name: 'AirPods', price: 499, coins: 'Coins', available: 11, image: airpods },
+  { name: 'Powerbank', price: 899, coins: 'Coins', available: 4, image: powerbank },
+  { name: 'USB flash drive', price: 299, coins: 'Coins', available: 21, image: usb_flash_drive },
+  { name: 'Smartphone', price: 3699, coins: 'Coins', available: 2, image: smartphone },
+  { name: 'Playstation 5', price: 7449, coins: 'Coins', available: 1, image: playstation_5 },
+  { name: 'Yandex Station', price: 1999, coins: 'Coins', available: 4, image: yandex_station },
+  { name: 'Planshet Samsung', price: 4999, coins: 'Coins', available: 24, image: planshet_samsung },
+];
 
 function App() {
   return (
-    <div>
-      <header style={styles.header}>
-        <img src={logo} alt="Shortly Logo" />
-        <nav style={styles.nav}>
-          <a href="#features">Features</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#resources">Resources</a>
-        </nav>
-        <button style={styles.signUpButton}>Sign Up</button>
-      </header>
-      <main style={styles.main}>
-        <section style={styles.heroSection}>
-          <h1>More than just shorter links</h1>
-          <button style={styles.getStartedButton}>Get Started</button>
-        </section>
-        <section style={styles.shortenSection}>
-          <input type="text" placeholder="Shorten a link here..." style={styles.input} />
-          <button style={styles.shortenButton}>Shorten It!</button>
-        </section>
-        <section style={styles.boostSection}>
-          <h2>Boost your links today</h2>
-          <button style={styles.getStartedButton}>Get Started</button>
-        </section>
-      </main>
-      <footer style={styles.footer}>
-        <div>Shortly</div>
-        <nav style={styles.nav}>
-          <a href="#features">Features</a>
-          <a href="#resources">Resources</a>
-        </nav>
-        <div style={styles.socialIcons}>
-          <a href="#facebook">FB</a>
-          <a href="#twitter">TW</a>
-          <a href="#instagram">IG</a>
+    <div className="App">
+      <Header />
+      <main>
+        <div className="product-grid">
+          {products.map((product, index) => (
+            <Card key={index} product={product} />
+          ))}
         </div>
+      </main>
+      <footer>
+        <p>MARS IT School 2022</p>
+        <p>Политика конфиденциальности</p>
       </footer>
     </div>
   );
 }
-
-let styles = {
-  header: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: '20px',
-    backgroundColor: '#fff',
-  },
-  logo: {
-    fontSize: '24px',
-    fontWeight: 'bold',
-  },
-  nav: {
-    display: 'flex',
-    gap: '20px',
-  },
-  signUpButton: {
-    backgroundColor: '#2acfcf',
-    color: '#fff',
-    border: 'none',
-    padding: '10px 20px',
-    borderRadius: '5px',
-  },
-  main: {
-    textAlign: 'center',
-    padding: '50px 20px',
-  },
-  heroSection: {
-    marginBottom: '50px',
-  },
-  getStartedButton: {
-    backgroundColor: '#2acfcf',
-    color: '#fff',
-    border: 'none',
-    padding: '10px 20px',
-    borderRadius: '5px',
-    marginTop: '20px',
-  },
-  shortenSection: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    gap: '10px',
-    marginBottom: '50px',
-  },
-  input: {
-    padding: '10px',
-    width: '300px',
-    borderRadius: '5px',
-    border: '1px solid #ccc',
-  },
-  shortenButton: {
-    backgroundColor: '#2acfcf',
-    color: '#fff',
-    border: 'none',
-    padding: '10px 20px',
-    borderRadius: '5px',
-  },
-  boostSection: {
-    backgroundColor: '#3b3054',
-    color: '#fff',
-    padding: '50px 20px',
-  },
-  footer: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: '20px',
-    backgroundColor: '#000',
-    color: '#fff',
-  },
-  socialIcons: {
-    display: 'flex',
-    gap: '10px',
-  },
-};
 
 export default App;

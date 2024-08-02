@@ -1,0 +1,30 @@
+.App-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.App-logo {
+  height: 40px;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #000;
+}
+
+nav a.active {
+  color: #ff6600;
+}
+
+nav button {
+  background-color: #ff6600;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
